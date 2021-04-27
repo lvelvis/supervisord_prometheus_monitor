@@ -11,6 +11,9 @@
 cat /etc/supervisord.d/prometheus_exporter.ini 
 
 [program:supervisor_exporter]
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=127.0.0.1:9001        ; (ip_address:port specifier, *:port for all iface)
+
 process_name=%(program_name)s
 command=/usr/bin/python3 /root/scripts/supervisor_exporter.py
 autostart=true
