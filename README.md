@@ -1,0 +1,2 @@
+# supervisord_prometheus_monitor
+收集supervisor的进程状态信息，并将信息暴露给Prometheus
