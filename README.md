@@ -1,11 +1,12 @@
 # supervisord_prometheus_monitor
 收集supervisor的进程状态信息，并将信息暴露给Prometheus
 
-#安装依赖模块
+# 安装依赖模块
+```
 *python3环境
 *pip install prometheus-client -i https://pypi.tuna.tsinghua.edu.cn/simple/
-
-#supervisord配置  
+```
+# supervisord配置  
 ```
 cat /etc/supervisord.d/prometheus_exporter.ini 
 
@@ -21,7 +22,7 @@ stdout_logfile_backups=3
 buffer_size=10
 ```
 
-#配置job  
+# 配置job  
 ```
   - job_name: 'supervistor-exporter'
     scrape_interval: 5s
@@ -84,5 +85,10 @@ groups:
       description: "{{ $labels.group }} of job {{ $labels.job }} has been down for more than 2 minutes."
 ```
 
-#其他资料
-*https://github.com/prometheus/client_python
+# metrics监控项
+![metrics监控项](https://github.com/lvelvis/supervisord_prometheus_monitor/blob/master/img/prom%E9%87%87%E9%9B%86%E7%9B%91%E6%8E%A7%E6%95%B0%E6%8D%AE.png)
+
+
+# 其他资料
+https://github.com/prometheus/client_python
+
