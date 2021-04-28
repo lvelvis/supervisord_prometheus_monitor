@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Desc    : 收集supervisor的进程状态信息，并将信息暴露给Prometheus。
 
+#/etc/supervisord.conf 删除以下二行的注释
 #[inet_http_server]         
 #port=127.0.0.1:9001
 
